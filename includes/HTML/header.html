@@ -1,0 +1,89 @@
+<link href="../../includes/css/commonStyles.css" rel="stylesheet">
+<div class="container">
+    <button class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand goingHome" href="index.html"><img src="../../images/logo.png" alt="image" id="logoimg"></a>
+
+    <div id="navbarCollapse" class="nav-collapse collapse">
+
+        <ul class="nav navbar-nav ">
+
+            <li class="goingHome" id="homeBtn">
+                <a href="#" >Home</a>
+            </li>
+
+            <li class="dropdown " id="productsBtn">
+                <a href="#" id="productTab" class="dropdown-toggle" data-toggle="dropdown"  ><strong class="caret"></strong>
+                    Buy Jewelry</a>
+                <ul class="dropdown-menu" id="productsDropdown">
+                    <li><span class="dropdown-header" style="color: black" ><b>TYPE OF JEWELRY</b></span></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="bangles" class="navProducts">BANGLES</a></li>
+                    <li><a href="#" id="belts" class="navProducts">BELTS</a></li>
+                    <li><a href="#" id="bracelets" class="navProducts">BRACELETS</a></li>
+                    <li><a href="#" id="buckles" class="navProducts">BUCKLES</a></li>
+                    <li><a href="#" id="cufflinks" class="navProducts">CUFFLINKS</a></li>
+                    <li><a href="#" id="cuffs" class="navProducts">CUFFS</a></li>
+                    <li><a href="#" id="earrings" class="navProducts">EARRINGS</a></li>
+                    <li><a href="#" id="necklaces" class="navProducts">NECKLACES</a></li>
+                    <li><a href="#" id="pendents" class="navProducts">PENDENTS</a></li>
+                    <li><a href="#" id="rings" class="navProducts">RINGS</a></li>
+                    <li><a href="#" id="sets" class="navProducts">SETS</a></li>
+                    <li><a href="#" id="specials" class="navProducts">SPECIALS</a></li>
+                </ul>
+            </li>
+
+            <li id="showsBtn">
+                <a href="#" id="shows" > Gem and Jewelry Shows</a>
+            </li>
+
+            <li class="dropdown " id="aboutBtn">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><strong class="caret"></strong>
+                    About</a>
+                <ul class="dropdown-menu">
+                    <li><a id="aboutUs">About us</a></li>
+                    <li><a href="#">Gemstone Knowledge</a></li>
+                    <li><a href="#">Designs</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <form class="navbar-form pull-left">
+            <input type="text" class="form-control" placeholder="Search this site.." id="searchInput">
+            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>
+            </button>
+        </form>
+
+        <ul class="nav navbar-nav pull-right" id="Sign In">
+            <li><a href="#" id="signInNav">Sign In</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+            <li class="dropdown">
+                <a href="#" class="accordion-toggle" data-toggle="dropdown"><span
+                        class="glyphicon glyphicon-user"></span><strong class="caret"></strong> My Account</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-heart"></span> Wish List</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">Sign out</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../js/CommonScript.js"></script>

@@ -1,0 +1,30 @@
+{
+  "orderID": 12345,
+  "shopperName": "",
+  "shopperEmail": "",
+  "numOfItems": 2,
+  "items": [
+    {
+      "productID": 34,
+      "productName": "",
+      "quantity": 1,
+      "price": 1
+    },
+    {
+      "productID": 36,
+      "productName": "",
+      "quantity": 1,
+      "price": 1
+    }
+  ],
+  "shippingAddress":[
+    {
+      "addressId": "",
+      "address1": "",
+      "address2":"",
+      "city": "",
+      "state": "",
+      "zipcode":""
+    }
+  ]
+}
