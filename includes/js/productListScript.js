@@ -3,6 +3,7 @@
  *
  */
 var searchedType = "", gemstone = [], gemstoneString = "", sortOrder = "";
+var baseUrl= "https:/localhost:8443/bloom/";
 
 $(document).ready(function () {
     searchedType = localStorage.getItem('item_type');
@@ -23,7 +24,7 @@ var tabActive={
 var gems ={
     getGems: function(){
 
-        this.customAjaxRequest("https://192.168.0.48:8443/bloom/rest/gemstones", "GET",this);
+        this.customAjaxRequest(baseUrl+"rest/gemstones", "GET",this);
     },
     customAjaxRequest: function (url, typeOfReq,scope) {
         $.ajax({
@@ -99,8 +100,6 @@ function arrayToString() {
 }
 
 var list = {
-    //192.168.0.48
-    baseUrl: "https:/192.168.0.48:8443/bloom/",
 
     getList: function () {
         var data = {
@@ -112,7 +111,7 @@ var list = {
             }
         };
 
-        this.customAjaxRequest("https://192.168.0.48:8443/bloom/rest/items/customFilter", JSON.stringify(data), "POST", this);
+        this.customAjaxRequest(baseUrl+"rest/items/customFilter", JSON.stringify(data), "POST", this);
     },
 
     customAjaxRequest: function (url, data, typeOfReq, scope) {
@@ -158,7 +157,7 @@ var list = {
 
                 $("#features").append('<div class="col-sm-4 feature thumbnail" >' +
                     '<div class="panel"> <div class="imgDiv">' +
-                    '<img id="product' + (i + 1) + 'Image" src="' + this.baseUrl + imgLoc + '" alt="product ' + (i + 1)
+                    '<img id="product' + (i + 1) + 'Image" src="' + baseUrl + imgLoc + '" alt="product ' + (i + 1)
                     + ' image" class="img-rounded ProductImageClass"> </div>' +
                     '<p class="productName" id=' + filteredItem.item_id + '> ' + filteredItem.item_name + '</p> </div>' +
                     '<div class="label label-success price"><span class="glyphicon glyphicon-tag"></span>' +
@@ -171,7 +170,6 @@ var list = {
     getImage: function (item) {
 
         var productImgLoc;
-        console.log(item)
         if (item.image_count == 1) {
             productImgLoc = item.item_images.item_image.image_location;
             return productImgLoc;
