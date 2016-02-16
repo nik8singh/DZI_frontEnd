@@ -3,7 +3,7 @@
  * This JavaScript file is for -
  */
 var searchedProduct = null, productId = null, imgLoc;
-
+var  baseUrl= "https:/localhost:8443/bloom/";
 $(document).ready(function () {
 
     searchedProduct = localStorage.getItem('item_name');
@@ -25,9 +25,9 @@ $("body").on('click', '.images', function () {
 //$('#productsBtn').on('shown.bs.dropdown', fu
 
 var info = {
-    baseUrl: "https:/192.168.0.48:8443/bloom/",
+
     getData: function () {
-        this.customAjaxRequest("https://192.168.0.48:8443/bloom/rest/item/" + productId, "GET", this);
+        this.customAjaxRequest(baseUrl+"rest/item/" + productId, "GET", this);
     },
 
     customAjaxRequest: function (url, typeOfReq, scope) {
@@ -72,7 +72,7 @@ var info = {
 
         if (item.image_count == 1) {
             productImgLoc = item.item_images.item_image.image_location;
-            this.addImage(this.baseUrl + productImgLoc, 1);
+            this.addImage(baseUrl + productImgLoc, 1);
         }
         else if (item.image_count > 1) {
             for (var loc = 0, searchPriorityNum = 1; searchPriorityNum <= item.image_count; loc++) {
@@ -81,7 +81,7 @@ var info = {
 
                 if (priority == searchPriorityNum) {
                     productImgLoc = item.item_images.item_image[loc].image_location;
-                    this.addImage(this.baseUrl + productImgLoc, priority);
+                    this.addImage(baseUrl + productImgLoc, priority);
                     loc = 0;
                     searchPriorityNum++;
                 }
