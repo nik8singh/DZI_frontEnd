@@ -35,7 +35,6 @@ var gems ={
             crossDomain: true,
             dataType: 'json',
             success: function (data) {
-                console.log(data);
                 scope.fillGemstoneList(data);
             },
             error: function (xhr, textStatus, errorThrown) {
