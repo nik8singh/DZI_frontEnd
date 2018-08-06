@@ -59,7 +59,7 @@
 
 .sortDropdown {
     float: left;
-    margin: 10px 0 10px 45px;
+    margin: 10px 0 10px 0;
 
 }
 
@@ -81,6 +81,11 @@
 .pager {
 
 }
+
+.sideBar{
+
+}
+
 
 @media (max-width: 768px) {
     #filter_col {

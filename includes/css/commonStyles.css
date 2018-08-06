@@ -116,7 +116,7 @@ footer {
 }
 
 .feature:hover {
-    -webkit-filter: brightness(130%);
+    -webkit-filter: brightness(110%);
     cursor: pointer;
 }
 
