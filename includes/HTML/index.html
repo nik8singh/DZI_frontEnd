@@ -4,8 +4,10 @@
 <head>
 
     <!-- Website Title & Description for Search Engine purposes -->
-    <title></title>
-    <meta name="description" content="">
+    <title>DZI Creations Home Page</title>
+    <meta name="DZI Creations" content="">
+
+    <meta name="google-signin-client_id" content="63012794700-pn2tj9ai0boins32p1um8debusus8c5b.apps.googleusercontent.com">
 
     <!-- Mobile viewport optimized -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -18,6 +20,8 @@
     <link href="../css/indexStyles.css" rel="stylesheet">
     <link href="../../includes/css/commonStyles.css" rel="stylesheet">
 
+
+
     <!-- Include Modernizr in the head, before any other Javascript -->
     <!--<script src="../../includes/js/modernizr-2.6.2.min.js"></script>-->
 </head>
@@ -28,13 +32,13 @@
 
     </div> <!-- end navbar -->
 
-        <div class="carousel slide active " id="myCarousel">
+        <div class="carousel slide" id="myCarousel" data-ride="carousel" data-interval="7000">
 
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-                <li data-slide-to="1" data-target="#myCarousel"></li>
-                <li data-slide-to="2" data-target="#myCarousel"></li>
+                <li data-target="#myCarousel" class="active" data-slide-to="0" ></li>
+                <li data-target="#myCarousel" data-slide-to="1" ></li>
+                <li data-target="#myCarousel" data-slide-to="2" ></li>
             </ol>
 
             <!-- Wrapper for slides -->
@@ -94,22 +98,7 @@
                             href="#">event
                         calender</a> for more information.
                     </p>
-                    <div class="form-group" id="loginForm">
-                        <div class="col-lg-4">
-                            <label for="usr">Email:</label>
-                            <input type="text" class="form-control" id="usr">
-                        </div>
-                        <div class="col-lg-4">
-                            <label for="pas">Password:</label>
-                            <input type="text" class="form-control" id="pas">
-                        </div>
 
-                    </div>
-
-                    <a href="#" id="loginBtn" class="btn btn-large btn-primary">SIGN IN</a>
-                    <p class="lead">
-                        <a href="" class="btn btn-large btn-link "> Not a member? sign up now </a>
-                    </p>
                 </div><!-- end well -->
 
             </div><!-- end col-12 -->
@@ -120,9 +109,6 @@
 
             <div class="col-12">
                 <h2>Featured Products</h2>
-                <p class="lead" style=" font-family: Georgia, serif ;">
-                    Beauty is in the eye of the admirer.
-                </p>
             </div><!-- end col-12 -->
 
         </div><!-- end row featuresHeading -->
@@ -209,6 +195,7 @@
     <footer>
         <div id="foot"></div>
     </footer>
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -225,15 +212,21 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
-
         </div>
     </div>
 
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- All Javascript at the bottom of the page for faster page loading -->
 
-
-    <!-- First try for the online version of jQuery-->
+    <!-- jQuery-->
     <script src="../js/jquery-1.12.0.min.js"></script>
 
     <!-- Bootstrap JS -->

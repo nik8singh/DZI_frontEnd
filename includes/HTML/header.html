@@ -12,38 +12,38 @@
 
         <ul class="nav navbar-nav ">
 
-            <li class="goingHome" id="homeBtn">
+            <li class="goingHome topmenuOption" id="homeBtn">
                 <a href="#" class="headerTab">Home</a>
             </li>
 
-            <li class="dropdown " id="productsBtn">
-                <a href="#" id="productTab" class="dropdown-toggle headerTab" data-toggle="dropdown"  ><strong class="caret"></strong>
+            <li class="dropdown topmenuOption" id="productsBtn">
+                <a href="#" id="productTab" class="dropdown-toggle headerTab" data-toggle="dropdown"  ><strong class="caret menuCaret"></strong>
                     Shop</a>
                 <ul class="dropdown-menu" id="productsDropdown">
                     <li><span class="dropdown-header" style="color: black" ><b>TYPE OF JEWELRY</b></span></li>
                     <li class="divider"></li>
-                    <li><a href="#" id="All" class="navProducts">All</a></li>
-                    <li><a href="#" id="Bangles" class="navProducts">Bangles</a></li>
-                    <li><a href="#" id="Belts" class="navProducts">Belts</a></li>
-                    <li><a href="#" id="Bracelets" class="navProducts">Bracelets</a></li>
-                    <li><a href="#" id="Buckles" class="navProducts">Buckles</a></li>
-                    <li><a href="#" id="Cufflinks" class="navProducts">Cufflinks</a></li>
-                    <li><a href="#" id="Cuffs" class="navProducts">Cuffs</a></li>
-                    <li><a href="#" id="Earrings" class="navProducts">Earrings</a></li>
-                    <li><a href="#" id="Necklaces" class="navProducts">Necklaces</a></li>
-                    <li><a href="#" id="Pendents" class="navProducts">Pendents</a></li>
-                    <li><a href="#" id="Rings" class="navProducts">Rings</a></li>
-                    <li><a href="#" id="Sets" class="navProducts">Sets</a></li>
-                    <li><a href="#" id="Specials" class="navProducts">Specials</a></li>
+                    <li><a href="#" id="all" class="navProducts">All</a></li>
+                    <li><a href="#" id="bangles" class="navProducts">Bangles</a></li>
+                    <li><a href="#" id="belts" class="navProducts">Belts</a></li>
+                    <li><a href="#" id="bracelets" class="navProducts">Bracelets</a></li>
+                    <li><a href="#" id="buckles" class="navProducts">Buckles</a></li>
+                    <li><a href="#" id="cufflinks" class="navProducts">Cuff-links</a></li>
+                    <li><a href="#" id="cuffs" class="navProducts">Cuffs</a></li>
+                    <li><a href="#" id="earrings" class="navProducts">Earrings</a></li>
+                    <li><a href="#" id="necklaces" class="navProducts">Necklaces</a></li>
+                    <li><a href="#" id="pendents" class="navProducts">Pendents</a></li>
+                    <li><a href="#" id="rings" class="navProducts">Rings</a></li>
+                    <li><a href="#" id="sets" class="navProducts">Sets</a></li>
+                    <li><a href="#" id="specials" class="navProducts">Specials</a></li>
                 </ul>
             </li>
 
-            <li id="showsBtn">
+            <li id="showsBtn" class="topmenuOption">
                 <a href="#" id="shows" class="headerTab"> Gem and Jewelry Shows</a>
             </li>
 
-            <li class="dropdown headerTab " id="aboutBtn">
-                <a href="#" class="dropdown-toggle headerTab" data-toggle="dropdown" ><strong class="caret"></strong>
+            <li class="dropdown headerTab topmenuOption" id="aboutBtn">
+                <a href="#" class="dropdown-toggle headerTab" data-toggle="dropdown" ><strong class="caret menuCaret"></strong>
                     About</a>
                 <ul class="dropdown-menu">
                     <li><a id="aboutUs">About us</a></li>
@@ -54,20 +54,24 @@
             </li>
         </ul>
 
-        <form class="navbar-form pull-left">
-            <input type="text" class="form-control" placeholder="Search this site.." id="searchInput">
+        <form class="navbar-form pull-left" style="padding-left: 2em;">
+            <input type="text" class="form-control" placeholder="Search this site.." id="searchInput" >
             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>
             </button>
         </form>
 
-        <ul class="nav navbar-nav pull-right " id="Sign In">
-            <li><a href="#" id="signInNav" class="headerTab">Sign In</a></li>
+        <ul class="nav navbar-nav pull-left">
+            <li><span id="alert" style="color: darkred"></span></li>
         </ul>
 
-        <ul class="nav navbar-nav pull-right headerTab">
-            <li class="dropdown">
+        <ul class="nav navbar-nav pull-right topmenuOption">
+            <li><a href="signin.html" id="signInNav" class="headerTab" data-toggle="modal" data-target="#signupModal">Sign In</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right headerTab" >
+            <li class="dropdown topmenuOption">
                 <a href="#" class="accordion-toggle headerTab" data-toggle="dropdown"><span
-                        class="glyphicon glyphicon-user"></span><strong class="caret"></strong> My Account</a>
+                        class="glyphicon glyphicon-user"></span><strong class="caret menuCaret"></strong> My Account</a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a>
@@ -80,7 +84,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="#">Sign out</a>
+                        <a href="#" id="signoutButton" onclick="signOut();">Sign out</a>
                     </li>
                 </ul>
             </li>

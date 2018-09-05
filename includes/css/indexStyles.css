@@ -139,6 +139,7 @@ img {
     #myCarousel .item{
         height: 800px;
         background-size:100%;
+        width: 100%;
 
     }
     #slide1 {
@@ -157,3 +158,6 @@ img {
     }
 }
 
+.signupFields{
+    margin-top: 50px;
+}

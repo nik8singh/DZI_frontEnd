@@ -1,0 +1,97 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="signinModalLabel">Account login/sign up</h4>
+</div>
+<div class="modal-body">
+    <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#signinTab" aria-controls="signinTab" role="tab" data-toggle="tab">Sign In</a></li>
+            <li role="presentation"><a href="#registerTab" aria-controls="registerTab" role="tab" data-toggle="tab">Register with email</a></li>
+        </ul>
+
+        <div class="tab-content">
+
+            <div role="tabpanel" class="tab-pane active" id="signinTab">
+                <div class="form-group" id="signinForm">
+                    <div class="row">
+                        <div class="span9">
+                            <div style="margin-top: 1em">
+                                <label for="signupEmail">Email:</label>
+                                <input type="email" class="form-control" id="signinEmail" placeholder="Enter Email">
+                            </div>
+                        </div>
+                        <div style="margin-top: 1em">
+                            <label for="signupPassword">Password:</label>
+                            <input type="password" class="form-control" id="signinPassword" placeholder="Password" >
+                        </div>
+
+                        <div class="checkbox " style="font-family: 'Times New Roman'; color: darkred">
+                            <input type="checkbox" id="rememberMe" value="" class="check">
+                            <label for="rememberMe">Remember Me</label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-2"><button type="button" class="btn btn-primary" data-dismiss="modal" style="height: 3.5em;">Sign In</button></div>
+                            <div class="col-1" style=" height: 3em; padding-top: 1em; font-weight: bold">OR</div>
+                            <div id="my-signin2" class="col-3"></div>
+                            <script>
+                                function renderButton() {
+                                    gapi.signin2.render('my-signin2', {
+                                        'scope': 'profile email',
+                                        'width': 240,
+                                        'height': 50,
+                                        'longtitle': true,
+                                        'theme': 'dark',
+                                        'onsuccess': onSignIn,
+                                    });
+                                }
+                            </script>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="registerTab">
+                <div class="form-group" id="signupForm">
+                    <div class="row">
+                        <div class="span9">
+                            <div style="margin-top: 1em">
+                                <label for="signupEmail">Email:</label>
+                                <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp" placeholder="Enter Email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1em">
+                            <label for="signupPassword">Password:</label>
+                            <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                        </div>
+                        <div style="margin-top: 1em">
+                            <label for="confirmSignupPassword">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirmSignupPassword" placeholder="Enter Password Again">
+                        </div>
+                        <div class="checkbox " style="font-family: 'Times New Roman'; color: darkred">
+                            <input type="checkbox" id="subscribeNewsletter" value="" class="check">
+                            <label for="subscribeNewsletter">Subscribe to newsletter</label>
+                        </div>
+                        <div class="col-2"><button type="button" class="btn btn-primary" data-dismiss="modal" style="height: 3.5em;">Sign Up</button></div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
