@@ -320,7 +320,7 @@ hr {
 #topbar .navbar-top-links li > a span.badge {
   position: absolute;
   top: 5px;
-  right: 30px;
+  right: 35px;
   padding: 3px 6px;
   color: #ffffff;
 }
@@ -3897,6 +3897,7 @@ body.sidebar-icons #wrapper #page-wrapper {
   float: left;
   background: transparent;
   font-size: 13px;
+  width: 50%!important;
 }
 .ticker {
   display: block;

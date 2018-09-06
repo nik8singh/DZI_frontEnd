@@ -188,13 +188,13 @@
 .jplist-drop-down {
     float: left;
     position: relative;
-    width: 170px;
+    width: 180px;
     margin: 10px 10px 0 0
 }
 
 .jplist-drop-down .jplist-dd-panel {
     float: left;
-    width: 157px;
+    width: 180px;
     overflow: hidden;
     text-indent: 10px;
     cursor: pointer
