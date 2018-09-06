@@ -155,7 +155,7 @@ footer {
 
 #logoimg {
     max-width: 150px;
-    max-height: 50px;
+    max-height: 55px;
 }
 
 @media (max-width: 768px) {
@@ -253,7 +253,7 @@ footer {
     }
 
     #myCarousel {
-        margin: 100px 0 0 0;
+        margin: 70px 0 0 0;
     }
 }
 
