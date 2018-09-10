@@ -3,305 +3,271 @@
 <head>
     <title>DZI Admin | Gemstones</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Loading bootstrap css-->
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700">
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
-    <link type="text/css" rel="stylesheet" href="../styles/jquery-ui-1.10.4.custom.min.css">
-    <link type="text/css" rel="stylesheet" href="../styles/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="../styles/animate.css">
-    <link type="text/css" rel="stylesheet" href="../styles/all.css">
-    <link type="text/css" rel="stylesheet" href="../styles/main.css">
-    <link type="text/css" rel="stylesheet" href="../styles/style-responsive.css">
-    <link type="text/css" rel="stylesheet" href="../styles/zabuto_calendar.min.css">
-    <link type="text/css" rel="stylesheet" href="../styles/pace.css">
-    <link type="text/css" rel="stylesheet" href="../styles/jquery.news-ticker.css">
-    <link type="text/css" rel="stylesheet" href="../styles/jplist-custom.css">
-    <link type="text/css" rel="stylesheet" href="../styles/customStyle.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"><!--Loading bootstrap css-->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css">
+    <link href="../styles/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css">
+    <link href="../styles/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../styles/animate.css" rel="stylesheet" type="text/css">
+    <link href="../styles/all.css" rel="stylesheet" type="text/css">
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <link href="../styles/style-responsive.css" rel="stylesheet" type="text/css">
+    <link href="../styles/zabuto_calendar.min.css" rel="stylesheet" type="text/css">
+    <link href="../styles/pace.css" rel="stylesheet" type="text/css">
+    <link href="../styles/jquery.news-ticker.css" rel="stylesheet" type="text/css">
+    <link href="../styles/jplist-custom.css" rel="stylesheet" type="text/css">
+    <link href="../styles/customStyle.css" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <!--BEGIN BACK TO TOP-->
-        <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
-        <!--END BACK TO TOP-->
-
-        <!--BEGIN TOPBAR-->
-      <div id="header-topbar-option-demo" class="page-header-topbar">
-
-        <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
-
+<div>
+    <!--BEGIN BACK TO TOP-->
+    <a href="#" id="totop"><i class="fa fa-angle-up"></i></a> <!--END BACK TO TOP-->
+    <!--BEGIN TOPBAR-->
+    <div class="page-header-topbar" id="header-topbar-option-demo">
+        <nav class="navbar navbar-default navbar-static-top" data-step="3" id="topbar" role="navigation" style="margin-bottom: 0;">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a id="logo" href="../index.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">DZI Creations</span><span style="display: none" class="logo-text-icon">µ</span></a>
+                <button class="navbar-toggle" data-target=".sidebar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="../index.html" id="logo"><span class="fa fa-rocket"></span><span class="logo-text">DZI Creations</span><span class="logo-text-icon" style="display: none">µ</span></a>
             </div>
-
-            <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
-
-                <form id="topbar-search" action="" method="" class="hidden-sm hidden-xs">
-                    <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Search here..." class="form-control text-white"/></div>
-                </form>
-
+            <div class="topbar-main">
+                <a class="hidden-xs" href="#" id="menu-toggle"><i class="fa fa-bars"></i></a>
                 <ul class="nav navbar navbar-top-links navbar-right mbn">
                     <li class="dropdown">
-                        <a data-hover="dropdown" href="#" class="dropdown-toggle">
-                            <i class="fa fa-bell fa-fw"></i>
-                            <span class="badge badge-green" id="pendingOrders">3</span>
-                        </a>
+                        <a class="dropdown-toggle" data-hover="dropdown" href="#"><i class="fa fa-bell fa-fw"></i> <span class="badge badge-green" id="pendingOrders">3</span></a>
                     </li>
-
                     <li class="dropdown">
-                        <a data-hover="dropdown" href="#" class="dropdown-toggle">
-                            <i class="fas fa-cart-arrow-down"></i>
-                            <span class="badge badge-orange" id="newOrders">10</span>
-                        </a>
+                        <a class="dropdown-toggle" data-hover="dropdown" href="#"><i class="fas fa-cart-arrow-down"></i> <span class="badge badge-orange" id="newOrders">10</span></a>
                     </li>
-
                     <li class="dropdown">
-                        <a data-hover="dropdown" href="#" class="dropdown-toggle">
-                            <i class="fa fa-ban fa-fw"></i>
-                            <span class="badge badge-yellow"id="cancelled Orders">8</span>
-                        </a>
+                        <a class="dropdown-toggle" data-hover="dropdown" href="#"><i class="fa fa-ban fa-fw"></i> <span class="badge badge-yellow" id="cancelled Orders">8</span></a>
                     </li>
                 </ul>
             </div>
         </nav>
-      </div>
-        <!--END TOPBAR-->
-
-
-
-        <div id="wrapper">
-
-            <!--BEGIN SIDEBAR MENU-->
-            <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
-                data-position="right" class="navbar-default navbar-static-side">
+    </div><!--END TOPBAR-->
+    <div id="wrapper">
+        <!--BEGIN SIDEBAR MENU-->
+        <nav class="navbar-default navbar-static-side" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;" data-position="right" data-step="2" id="sidebar" role="navigation">
             <div class="sidebar-collapse menu-scroll">
-                <ul id="side-menu" class="nav">
-
-                     <div class="clearfix"></div>
-                    <li><a href="../dashboard.html"><i class="fa fa-tachometer fa-fw">
-                        <div class="fas fa-chart-line"></div>
-                    </i><span class="menu-title">Dashboard</span></a></li>
-
-                    <li class="active"><a href="gemstones.html"><i class="fas fa-gem">
-                        <div class="icon-bg bg-red"></div>
-                    </i><span class="menu-title">Gemstones</span></a>
-
-                    <li><a href="../Animation.html"><i class="fa fa-slack fa-fw">
-                        <div class="icon-bg bg-green"></div>
-                    </i><span class="menu-title">Animations</span></a></li>
-
+                <ul class="nav" id="side-menu">
+                    <li style="list-style: none; display: inline">
+                        <div class="clearfix"></div>
+                    </li>
+                    <li>
+                        <a href="../index.html"><i class="fa fa-tachometer fa-fw"></i>
+                            <div class="fas fa-chart-line"></div><span class="menu-title">Dashboard</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="gemstones.html"><i class="fas fa-gem"></i>
+                            <div class="icon-bg bg-red"></div><span class="menu-title">Gemstones</span></a>
+                    </li>
+                    <li>
+                        <a href="../Animation.html"><i class="fa fa-slack fa-fw"></i>
+                            <div class="icon-bg bg-green"></div><span class="menu-title">Animations</span></a>
+                    </li>
                 </ul>
             </div>
         </nav>
-
-
-            <div id="page-wrapper">
-
-                <!--BEGIN TITLE & BREADCRUMB PAGE-->
-                <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
-                    <div class="page-header pull-left">
-                        <div class="page-title">Gemstones</div>
-                    </div>
-                    <ol class="breadcrumb page-breadcrumb pull-right">
-                        <li><i class="fa fa-home"></i>&nbsp;<a href="../dashboard.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="hidden"><a href="#">Data Grid</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="active">Gemstones</li>
-                    </ol>
-                    <div class="clearfix">
+        <div id="page-wrapper">
+            <!--BEGIN TITLE & BREADCRUMB PAGE-->
+            <div class="page-title-breadcrumb" id="title-breadcrumb-option-demo">
+                <div class="page-header pull-left">
+                    <div class="page-title">
+                        Gemstones
                     </div>
                 </div>
-                <!--END TITLE & BREADCRUMB PAGE-->
-
-                <!--BEGIN CONTENT-->
-                <div class="page-content">
-                    <div id="tab-general">
-                        <div class="row mbl">
-                            <div class="col-lg-12">
-
-                                            <div class="col-md-12">
-                                                <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a href="../index.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+                    </li>
+                    <li class="hidden">
+                        <a href="#">Data Grid</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+                    </li>
+                    <li class="active">Gemstones</li>
+                </ol>
+                <div class="clearfix"></div>
+            </div><!--END TITLE & BREADCRUMB PAGE-->
+            <!--BEGIN CONTENT-->
+            <div class="page-content">
+                <div id="tab-general">
+                    <div class="row mbl">
+                        <div class="col-lg-12">
+                            <div class="col-md-12">
+                                <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="page-content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <div class="box jplist" id="grid-layout-table-1">
+                                                    <div class="jplist-ios-button">
+                                                        <i class="fa fa-sort"></i>jPList Actions
+                                                    </div>
+                                                    <div class="jplist-panel box panel-top">
+                                                        <button class="btn btn-green" id="addNewGemBtn" type="button">Add New<i class="fas fa-plus mls"></i></button> <button class="jplist-reset-btn btn btn-default" data-control-action="reset" data-control-name="reset" data-control-type="reset" type="button">Reset<i class="fa fa-share mls"></i></button>
+                                                        <div class="jplist-drop-down form-control" data-control-name="sort" data-control-type="drop-down">
+                                                            <ul class="dropdown-menu">
+                                                                <li><span data-path="default">Sort by</span></li>
+                                                                <li><span>Title A-Z</span></li>
+                                                                <li><span>Title Z-A</span></li>
+                                                                <li><span>Last updated asc</span></li>
+                                                                <li><span>Last updated desc</span></li>
+                                                                <li><span>Creation Date asc</span></li>
+                                                                <li><span>Creation Date desc</span></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="text-filter-box">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control" data-control-action="filter" data-control-name="title-filter" data-control-type="textbox" data-path=".title" placeholder="Filter by Title" type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-filter-box">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control" data-control-action="filter" data-control-name="desc-filter" data-control-type="textbox" data-path=".desc" placeholder="Filter by Description" type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="jplist-label btn btn-default" data-control-action="paging" data-control-name="paging" data-control-type="pagination-info" data-type="Page {current} of {pages}"></div>
+                                                        <div class="jplist-pagination" data-control-action="paging" data-control-name="paging" data-control-type="pagination"></div>
+                                                    </div>
+                                                    <div class="box text-shadow" id="gemList">
+                                                        <table class="demo-tbl">
+                                                            <!--<item>1</item>-->
+                                                            <tr class="tbl-item">
+                                                                <td class="img"><img alt="" src="../images/thumbs/arch-2.jpg" title=""></td>
+                                                                <td class="td-block">
+                                                                    <p class="date gemCreatedDate"></p>
+                                                                    <textarea class="title gemEditableFields gemTitle" disabled></textarea>
+                                                                    <textarea class="desc gemDesc gemEditableFields" cols="80" disabled rows="10"></textarea>
+                                                                    <p class="like gemUpdatedDate" style="float: left"></p><a class="gemButtons editGem" hidden="" href="#">Edit</a> <a class="updateGem gemButtons" hidden="" href="#">Update</a> <a class="cancelUpdateGem gemButtons" hidden="" href="#">Cancel</a> <a class="deleteGem gemButtons" hidden="" href="#">Delete Gemstone</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="box jplist-no-results text-shadow align-center">
+                                                        <p>No results found</p>
+                                                    </div>
+                                                    <div class="jplist-ios-button">
+                                                        <i class="fa fa-sort"></i>jPList Actions
+                                                    </div>
+                                                    <div class="jplist-panel box panel-bottom">
+                                                        <div class="jplist-label btn btn-default" data-control-action="paging" data-control-name="paging" data-control-type="pagination-info" data-type="{start} - {end} of {all}"></div>
+                                                        <div class="jplist-pagination" data-control-action="paging" data-control-animate-to-top="true" data-control-name="paging" data-control-type="pagination"></div>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                            </div>
-
-                            <div class="col-lg-12">
-
-                            <div class="page-content">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel">
-                            <div class="panel-body">
-                                <div id="grid-layout-table-1" class="box jplist">
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>jPList Actions</div>
-                                    <div class="jplist-panel box panel-top">
-                                        <button type="button" class="btn btn-green" id="addNewGemBtn">Add New<i class="fas fa-plus mls"></i></button>
-                                        <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Reset<i class="fa fa-share mls"></i></button>
-                                        <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" class="jplist-drop-down form-control">
-                                            <ul class="dropdown-menu">
-                                                <li><span data-number="3"> 3 per page</span></li>
-                                                <li><span data-number="5"> 5 per page</span></li>
-                                                <li><span data-number="10" data-default="true"> 10 per page</span></li>
-                                                <li><span data-number="all"> view all</span></li>
-                                            </ul>
                                         </div>
-                                        <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
-                                            <ul class="dropdown-menu">
-                                                <li><span data-path="default">Sort by</span></li>
-                                                <li><span data-path=".title" data-order="asc" data-type="text">Title A-Z</span></li>
-                                                <li><span data-path=".title" data-order="desc" data-type="text">Title Z-A</span></li>
-                                                <li><span data-path=".desc" data-order="asc" data-type="text">Description A-Z</span></li>
-                                                <li><span data-path=".desc" data-order="desc" data-type="text">Description Z-A</span></li>
-                                                <li><span data-path=".like" data-order="asc" data-type="number" data-default="true">Last Modified asc</span></li>
-                                                <li><span data-path=".like" data-order="desc" data-type="number">Last Modified desc</span></li>
-                                                <li><span data-path=".date" data-order="asc" data-type="datetime">Creation Date asc</span></li>
-                                                <li><span data-path=".date" data-order="desc" data-type="datetime">Creation Date desc</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="text-filter-box">
-                                            <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input data-path=".title" type="text" value="" placeholder="Filter by Title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" class="form-control"/></div>
-                                        </div>
-                                        <div class="text-filter-box">
-                                            <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input data-path=".desc" type="text" value="" placeholder="Filter by Description" data-control-type="textbox" data-control-name="desc-filter" data-control-action="filter" class="form-control"/></div>
-                                        </div>
-                                        <div data-type="Page {current} of {pages}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
-                                        <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" class="jplist-pagination"></div>
-                                    </div>
-                                    <div class="box text-shadow" id = "gemList">
-                                        <table class="demo-tbl"><!--<item>1</item>-->
-                                            <tr class="tbl-item"><!--<img/>-->
-                                                <td class="img"><img src="../images/thumbs/arch-1.jpg" alt="" title=""/></td>
-                                                <!--<data></data>-->
-                                                <td class="td-block">
-                                                    <p class="date" id="gemCreatedDate001">03/15/2012</p>
-
-                                                    <textarea  class="title gemEditableFields gemTitle "  disabled>Dude</textarea>
-
-                                                    <textarea class="desc gemDesc gemEditableFields"  rows="10" cols="80" disabled>An arch is a structure that spans a space and supports a load. Arches appeared as early as the 2nd millennium BC in Mesopotamian brick architecture and their systematic use started with the Ancient Romans who were the first to apply the technique to a wide range of structures.</textarea>
-
-                                                    <p class="like" style="float: left">Last Modified: 09/06/2017</p>
-
-                                                    <a href="#" class="gemButtons editGem" >Edit</a>
-
-                                                    <a class="updateGem gemButtons" href="#" hidden>Update</a>
-
-                                                    <a class="cancelUpdateGem gemButtons" href="#" hidden>Cancel</a>
-
-                                                </td>
-                                            </tr>
-                                            <!--<item>2</item>-->
-                                            <tr class="tbl-item"><!--<img/>-->
-                                                <td class="img"><img src="../images/thumbs/arch-2.jpg" alt="" title=""/></td>
-                                                <!--<data></data>-->
-                                                <td class="td-block"><p class="date">03/18/2012</p>
-
-                                                    <textarea  class="title gemEditableFields gemTitle"  disabled>Architecture</textarea>
-
-                                                    <textarea class="desc gemDesc gemEditableFields"  rows="10" cols="80" disabled>Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</textarea>
-
-                                                    <p class="like" style="float: left">Last Modified: 09/06/2018</p>
-
-                                                    <a href="#" class="gemButtons editGem" >Edit</a>
-
-                                                    <a class="updateGem gemButtons" href="#" hidden>Update</a>
-
-                                                    <a class="cancelUpdateGem gemButtons" href="#" hidden>Cancel</a>
-
-                                                </td>
-                                            </tr>
-
-                                        </table>
-                                    </div>
-                                    <div class="box jplist-no-results text-shadow align-center"><p>No results found</p></div>
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>jPList Actions</div>
-                                    <div class="jplist-panel box panel-bottom">
-                                        <div data-type="{start} - {end} of {all}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging" class="jplist-label btn btn-default"></div>
-                                        <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true" class="jplist-pagination"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-                            
-                            </div>
-                            
-                        </div>
-                    </div>
+            </div><!--END CONTENT-->
+            <!--BEGIN FOOTER-->
+            <div id="footer">
+                <div class="copyright">
+                    <a href="http://themifycloud.com">2018 © DZI Creations Admin tool</a>
                 </div>
-                <!--END CONTENT-->
-                <!--BEGIN FOOTER-->
-                <div id="footer">
-                    <div class="copyright">
-                        <a href="http://themifycloud.com">2018 © DZI Creations Admin tool</a></div>
-                </div>
-                <!--END FOOTER-->
-            </div>
-            <!--END PAGE WRAPPER-->
-        </div>
+            </div><!--END FOOTER-->
+        </div><!--END PAGE WRAPPER-->
     </div>
-    <script src="../script/jquery-1.10.2.min.js"></script>
-    <script src="../script/jquery-migrate-1.2.1.min.js"></script>
-    <script src="../script/jquery-ui.js"></script>
-    <script src="../script/bootstrap.min.js"></script>
-    <script src="../script/bootstrap-hover-dropdown.js"></script>
-    <script src="../script/html5shiv.js"></script>
-    <script src="../script/respond.min.js"></script>
-    <script src="../script/jquery.metisMenu.js"></script>
-    <script src="../script/jquery.slimscroll.js"></script>
-    <script src="../script/jquery.cookie.js"></script>
-    <script src="../script/icheck.min.js"></script>
-    <script src="../script/custom.min.js"></script>
-    <script src="../script/jquery.news-ticker.js"></script>
-    <script src="../script/jquery.menu.js"></script>
-    <script src="../script/pace.min.js"></script>
-    <script src="../script/holder.js"></script>
-    <script src="../script/responsive-tabs.js"></script>
-    <script src="../script/jquery.flot.js"></script>
-    <script src="../script/jquery.flot.categories.js"></script>
-    <script src="../script/jquery.flot.pie.js"></script>
-    <script src="../script/jquery.flot.tooltip.js"></script>
-    <script src="../script/jquery.flot.resize.js"></script>
-    <script src="../script/jquery.flot.fillbetween.js"></script>
-    <script src="../script/jquery.flot.stack.js"></script>
-    <script src="../script/jquery.flot.spline.js"></script>
-    <script src="../script/zabuto_calendar.min.js"></script>
-    <script src="../script/index.js"></script>
-    <script src="../script/highcharts.js"></script>
-    <script src="../script/data.js"></script>
-    <script src="../script/drilldown.js"></script>
-    <script src="../script/exporting.js"></script>
-    <script src="../script/highcharts-more.js"></script>
-    <script src="../script/charts-highchart-pie.js"></script>
-    <script src="../script/charts-highchart-more.js"></script>
-    <script src="../script/modernizr.min.js"></script>
-    <script src="../script/jplist.min.js"></script>
-    <script src="../script/jplist.js"></script>
+</div>
+<script src="../script/jquery-1.10.2.min.js">
+</script>
+<script src="../script/jquery-migrate-1.2.1.min.js">
+</script>
+<script src="../script/jquery-ui.js">
+</script>
+<script src="../script/bootstrap.min.js">
+</script>
+<script src="../script/bootstrap-hover-dropdown.js">
+</script>
+<script src="../script/html5shiv.js">
+</script>
+<script src="../script/respond.min.js">
+</script>
+<script src="../script/jquery.metisMenu.js">
+</script>
+<script src="../script/jquery.slimscroll.js">
+</script>
+<script src="../script/jquery.cookie.js">
+</script>
+<script src="../script/icheck.min.js">
+</script>
+<script src="../script/custom.min.js">
+</script>
+<script src="../script/jquery.news-ticker.js">
+</script>
+<script src="../script/jquery.menu.js">
+</script>
+<script src="../script/pace.min.js">
+</script>
+<script src="../script/holder.js">
+</script>
+<script src="../script/responsive-tabs.js">
+</script>
+<script src="../script/jquery.flot.js">
+</script>
+<script src="../script/jquery.flot.categories.js">
+</script>
+<script src="../script/jquery.flot.pie.js">
+</script>
+<script src="../script/jquery.flot.tooltip.js">
+</script>
+<script src="../script/jquery.flot.resize.js">
+</script>
+<script src="../script/jquery.flot.fillbetween.js">
+</script>
+<script src="../script/jquery.flot.stack.js">
+</script>
+<script src="../script/jquery.flot.spline.js">
+</script>
+<script src="../script/zabuto_calendar.min.js">
+</script>
+<script src="../script/index.js">
+</script>
+<script src="../script/highcharts.js">
+</script>
+<script src="../script/data.js">
+</script>
+<script src="../script/drilldown.js">
+</script>
+<script src="../script/exporting.js">
+</script>
+<script src="../script/highcharts-more.js">
+</script>
+<script src="../script/charts-highchart-pie.js">
+</script>
+<script src="../script/charts-highchart-more.js">
+</script>
+<script src="../script/modernizr.min.js">
+</script>
+<script src="../script/jplist.min.js">
+</script>
+<script src="../script/jplist.js">
+</script> <!--CORE JAVASCRIPT-->
 
-    <!--CORE JAVASCRIPT-->
-    <script src="../script/main.js"></script>
-    <script src="../script/myScript.js"></script>
-
-    <!--<script>      -->
-        <!--(function (i, s, o, g, r, a, m) {-->
-            <!--i['GoogleAnalyticsObject'] = r;-->
-            <!--i[r] = i[r] || function () {-->
-                <!--(i[r].q = i[r].q || []).push(arguments)-->
-            <!--}, i[r].l = 1 * new Date();-->
-            <!--a = s.createElement(o),-->
-            <!--m = s.getElementsByTagName(o)[0];-->
-            <!--a.async = 1;-->
-            <!--a.src = g;-->
-            <!--m.parentNode.insertBefore(a, m)-->
-        <!--})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');-->
-        <!--ga('create', 'UA-145464-12', 'auto');-->
-        <!--ga('send', 'pageview');-->
-
-
+<script src="../script/main.js">
+</script>
+<script src="../script/gemstoneScript.js">
+</script> <!--<script>      -->
+<!--(function (i, s, o, g, r, a, m) {-->
+<!--i['GoogleAnalyticsObject'] = r;-->
+<!--i[r] = i[r] || function () {-->
+<!--(i[r].q = i[r].q || []).push(arguments)-->
+<!--}, i[r].l = 1 * new Date();-->
+<!--a = s.createElement(o),-->
+<!--m = s.getElementsByTagName(o)[0];-->
+<!--a.async = 1;-->
+<!--a.src = g;-->
+<!--m.parentNode.insertBefore(a, m)-->
+<!--})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');-->
+<!--ga('create', 'UA-145464-12', 'auto');-->
+<!--ga('send', 'pageview');-->
 <!--</script>-->
 </body>
 </html>
