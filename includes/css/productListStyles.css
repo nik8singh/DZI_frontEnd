@@ -154,8 +154,8 @@
 
 .checkbox :hover {
 
-    color: #d43f3a;
-    font-weight: bold;
+    color: darkred;
+    /*font-weight: bold;*/
 }
 
 /* Base for label styling */

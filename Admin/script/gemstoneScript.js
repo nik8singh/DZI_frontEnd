@@ -1,9 +1,9 @@
-const url = "http://localhost:8080/gemstone/all";
+const url = "http://localhost:8080/gemstone/";
 // const  url = "https://jsonplaceholder.typicode.com/todos/1";
 $(function() {
     console.log("fetching gemstones from: " + url);
     $.ajax({
-        url: url,
+        url: url+"all",
         type: 'GET',
         dataType: 'json',
         success: function(result) {
@@ -16,6 +16,7 @@ $(function() {
                     let r = "<tr class=\"tbl-item\">" + "<td class=\"img\"><img src=\"../images/thumbs/arch-1.jpg\" alt=\"\" title=\"\"/></td><td class=\"td-block\">" + "<p class=\"date\">" + createdDate + "</p>" + "<textarea  class=\"title gemEditableFields gemTitle \"  disabled>" + element.gemstoneName + "</textarea>" + "<textarea class=\"desc gemDesc gemEditableFields\"  rows=\"10\" cols=\"80\" disabled>" + element.gemstoneDescription + "</textarea>" + "<p class=\"like\" style=\"float: left\"> Last Updated: " + updatedDate + "</p>" + "<a href=\"#\" class=\"gemButtons editGem\" >Edit</a>" + "<a class=\"updateGem gemButtons\" href=\"#\" hidden>Update</a>" + "<a class=\"cancelUpdateGem gemButtons\" href=\"#\" hidden>Cancel</a>" + "<a class=\"deleteGem gemButtons\" href=\"#\" hidden>Delete Gemstone</a>" + "</td></tr>";
                     $(".demo-tbl").prepend(r);
                 } else {
+                    $('.gemstoneThumbnail').attr("src","../images/thumbs/arch-1.jpg");
                     $('.gemCreatedDate').text(createdDate);
                     $('.gemUpdatedDate').text("Last Updated: " + updatedDate);
                     $('.gemTitle').text(element.gemstoneName);
@@ -81,7 +82,7 @@ $('#gemList').on('click', '.updateGem', function() {
     $(this).prop('disabled', false);
     $(this).css('color', 'darkred');
     deleteBtn.hide();
-    let r = "<div class=\"alert alert-success\"><strong>Updated!</strong> Successfully.</div>";
+    let r = "<div class=\"alert alert-success alert-dismissable\"><strong>Updated!</strong> Successfully.</div>";
     $(this).parent().append(r);
     return false;
 });
@@ -109,6 +110,9 @@ $('#gemList').on('click', '.deleteGem', function() {
     let name = title.val();
     let r = confirm("You are about to delete "+name+" Gemstone. Are you Sure?");
     if (r == true) {
+
+
+
         /*
          *
          *
@@ -120,10 +124,13 @@ $('#gemList').on('click', '.deleteGem', function() {
          *
          *
          * */
+
         $(this).parent().parent().remove();
-        let done = "<div class=\"alert alert-warning alert-dismissable\">" + "<button type=\"button\" data-dismiss=\"alert\" aria-hidden=\"true\" class=\"close\">&times;</button>" + "<strong>" + name + "</strong> Gemstone Deleted." + " </div>";
+        let done = "<div class=\"alert alert-warning alert-dismissable\">" + "<button type=\"button\" data-dismiss=\"alert\" aria-hidden=\"true\" class=\"close\">&times;</button>" + "<strong>" + name + "</strong> Gemstone Deleted" + " </div>";
         $('.page-header').append(done);
     }
+
+
     return false;
 });
 $('#addNewGemBtn').on('click', function() {
@@ -141,6 +148,32 @@ $('#gemList').on('click', ".addNewGem", function() {
     let name = $('#newGemName').val();
     let desc = $('#newGemDescription').val();
     let image = "../images/thumbs/arch-1.jpg";
+
+    let myValues = {gemstoneName: name, gemstoneDescription: desc};
+
+    $.ajax({
+        url: url+"add",
+        type: 'POST',
+        data: myValues,
+        success: function(result) {
+            alert("success: " + result.toString());
+
+            let createdDate = "1/1/1888";
+            let lastUpdatedDate = "Last Modified 1/1/1888";
+            let r = "<tr class=\"tbl-item\"><td class=\"img\"><img src=" + image + " alt=\"\" title=\"\"/></td><td class=\"td-block\"><p class=\"date\">" + createdDate + "</p><textarea  class=\"title gemEditableFields gemTitle \"  disabled>" + name + "</textarea><textarea class=\"desc gemDesc gemEditableFields\"  rows=\"10\" cols=\"80\" disabled>" + desc + "</textarea><p class=\"like\" style=\"float: left\">Last updated: " + lastUpdatedDate + "</p><a href=\"#\" class=\"gemButtons editGem\" >Edit</a><a class=\"updateGem gemButtons\" href=\"#\" hidden>Update</a><a class=\"cancelUpdateGem gemButtons\" href=\"#\" hidden>Cancel</a><a class=\"deleteGem gemButtons\" href=\"#\" hidden>Delete Gemstone</a></td></tr>";
+            $(this).parent().parent().remove();
+            $(".demo-tbl").prepend(r);
+
+        },
+        error: function(request, status, error) {
+            let done = "<div class=\"alert alert alert-danger alert-dismissable\">" + "<button type=\"button\" data-dismiss=\"alert\" aria-hidden=\"true\" class=\"close\">&times;</button>" + "<strong>" + name + "</strong> Error gemstone Not added" + " </div>";
+            $('.addNewGem').parent().append(done);
+
+            console.log("Status: " + status);
+            console.log("error: " + error);
+            console.log("response: " + request.responseText);
+        }
+    });
     /*
      *
      *
@@ -150,11 +183,7 @@ $('#gemList').on('click', ".addNewGem", function() {
      *
      *
      */
-    let createdDate = "1/1/1888";
-    let lastUpdatedDate = "Last Modified 1/1/1888";
-    let r = "<tr class=\"tbl-item\">" + "<td class=\"img\"><img src=" + image + " alt=\"\" title=\"\"/></td><td class=\"td-block\">" + "<p class=\"date\">" + createdDate + "</p>" + "<textarea  class=\"title gemEditableFields gemTitle \"  disabled>" + name + "</textarea>" + "<textarea class=\"desc gemDesc gemEditableFields\"  rows=\"10\" cols=\"80\" disabled>" + desc + "</textarea>" + "<p class=\"like\" style=\"float: left\">Last updated: " + lastUpdatedDate + "</p>" + "<a href=\"#\" class=\"gemButtons editGem\" >Edit</a>" + "<a class=\"updateGem gemButtons\" href=\"#\" hidden>Update</a>" + "<a class=\"cancelUpdateGem gemButtons\" href=\"#\" hidden>Cancel</a>" + "<a class=\"deleteGem gemButtons\" href=\"#\" hidden>Delete Gemstone</a>" + "</td></tr>";
-    $(this).parent().parent().remove();
-    $(".demo-tbl").prepend(r);
+
 });
 
 function formatDate(inputDate) {

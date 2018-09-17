@@ -126,7 +126,13 @@ footer {
     background: none;
     border: none;
     border-bottom: inset thin grey;
+}
 
+.ProductImageClass {
+    transition: transform .2s; /* Animation */
+}
+.ProductImageClass:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 /* --------------------------------------
@@ -155,7 +161,7 @@ footer {
 
 #logoimg {
     max-width: 150px;
-    max-height: 55px;
+    max-height: 50px;
 }
 
 @media (max-width: 768px) {
@@ -294,11 +300,19 @@ footer {
 
 }
 
+
+
 .activeTab {
     /*background-color: lightskyblue!important;*/
     /*color: black!important;*/
     font-weight: bold!important;
-    border-bottom: 5px solid #EAB92D;
+    /*border-bottom: 5px solid #80852B;*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fbfbdd+92,fffcf1+100&0+85,1+100 */
+    background: -moz-linear-gradient(top, rgba(251,251,221,0) 85%, rgba(251,251,221,0.47) 92%, rgba(255,252,241,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(251,251,221,0) 85%,rgba(251,251,221,0.47) 92%,rgba(255,252,241,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(251,251,221,0) 85%,rgba(251,251,221,0.47) 92%,rgba(255,252,241,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fbfbdd', endColorstr='#fffcf1',GradientType=0 ); /* IE6-9 */
+
 }
 .menuCaret{
     color: white;
@@ -311,10 +325,18 @@ footer {
     font-size: medium;
     color: white!important;
 }
+
+.headerDropdown:focus{
+    background-color: #5E5E5E!important;
+    color: #E9E9E9!important;
+
+}
+
 .headerTab:focus{
 
-    background-color: #5bc0de!important;
-    color: black!important;
+    /*background-color: #5bc0de!important;*/
+    /*color: black!important;*/
+    -webkit-filter: brightness(110%);
 }
 
 .headerTab:hover{
@@ -342,4 +364,8 @@ footer {
     /*opacity: 1;*/
 
 
+}
+
+.breadcrumb > li + li:before {
+    color: darkred;
 }
