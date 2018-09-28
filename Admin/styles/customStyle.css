@@ -13,6 +13,7 @@
     height: 2em;
     overflow: hidden;
     resize: none;
+    text-transform:capitalize;
 }
 
 .gemEditableFields{
