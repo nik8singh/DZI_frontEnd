@@ -3,6 +3,7 @@ const url = "http://localhost:8080/gemstone/";
 $(function () {
 
     console.log("CALLING AJAX");
+
     $.ajax({
         url: url + "all",
         type: 'GET',
@@ -28,16 +29,21 @@ $(function () {
                 }
                 i++;
             });
+
+
         },
         error: function (request, status, error) {
             console.log("Status: " + status);
             console.log("error: " + error);
             console.log("json not found: " + request.responseText);
+        },
+        complete: function (data) {
+
+            $('#loading').hide();
         }
     });
-
-
 });
+
 
 let gemName;
 let gemDesc;
@@ -210,7 +216,7 @@ $(tablesDivision).on('click', ".addNewItem", function () {
         contentType: 'application/json',
         success: function (result, status) {
             let currentDate = getCurrentDate();
-            let r = "<tr class=\"tbl-item\" id=\""+result.gemstoneId+"\"><td class=\"td-block\" style=\"width: 100%\"><p class=\"date\">" + currentDate + "</p><textarea  class=\"title itemEditableFields itemTitle \"  disabled>" + gemName.val() + "</textarea><textarea class=\"desc itemDesc itemEditableFields\"  rows=\"10\" cols=\"80\" disabled>" + gemDesc.val() + "</textarea><p class=\"like\" style=\"float: left\">Last updated: " + currentDate + "</p><a href=\"#\" class=\"itemButtons editItem\" >Edit</a><a class=\"updateItem itemButtons\" href=\"#\" hidden>Update</a><a class=\"cancelUpdateItem itemButtons\" href=\"#\" hidden>Cancel</a><a class=\"deleteItem itemButtons\" href=\"#\" hidden>Delete Gemstone</a></td></tr>";
+            let r = "<tr class=\"tbl-item\" id=\"" + result.gemstoneId + "\"><td class=\"td-block\" style=\"width: 100%\"><p class=\"date\">" + currentDate + "</p><textarea  class=\"title itemEditableFields itemTitle \"  disabled>" + gemName.val() + "</textarea><textarea class=\"desc itemDesc itemEditableFields\"  rows=\"10\" cols=\"80\" disabled>" + gemDesc.val() + "</textarea><p class=\"like\" style=\"float: left\">Last updated: " + currentDate + "</p><a href=\"#\" class=\"itemButtons editItem\" >Edit</a><a class=\"updateItem itemButtons\" href=\"#\" hidden>Update</a><a class=\"cancelUpdateItem itemButtons\" href=\"#\" hidden>Cancel</a><a class=\"deleteItem itemButtons\" href=\"#\" hidden>Delete Gemstone</a></td></tr>";
             $(".demo-tbl").prepend(r);
             $(self).parent().parent().remove();
             showAlert("alert-success", "<strong>" + name + "</strong> Gemstone Added", ".page-header");

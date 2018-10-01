@@ -1,5 +1,25 @@
 let record;
 let tableBody = ".tableBody";
+let recordName;
+let recordDiscount;
+let recordStartDate;
+let recordEndDate;
+let recordStatus;
+
+function getElements(self){
+    recordName = $(self).parent().parent().find('td:nth-child(2)').find('input:first');
+    recordDiscount = $(self).parent().parent().find('td:nth-child(3)').find('input:first');;
+    recordStartDate = $(self).parent().parent().find('td:nth-child(4)').find('input:first');;
+    recordEndDate = $(self).parent().parent().find('td:nth-child(5)').find('input:first');;
+    recordStatus = $(self).parent().parent().find('td:nth-child(6)').find('span:first');;
+
+    console.log("recordName: " + recordName.val());
+    console.log("recordDiscount: " + recordDiscount.val());
+    console.log("recordStartDate: " + recordStartDate.val());
+    console.log("recordEndDate: " + recordEndDate.val());
+    console.log("recordStatus: " + recordStatus.text());
+}
+
 
 function createNewRecord() {
     record = "<tr>\n" +
@@ -30,4 +50,8 @@ $('#addNewRecordBtn').on('click', function () {
 $(tableBody).on('click', ".cancelBtn", function () {
     $(this).parent().parent().remove();
     return false;
+});
+
+$(tableBody).on('click', ".editIcon", function () {
+    getElements(this);
 });

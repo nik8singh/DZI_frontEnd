@@ -32,6 +32,10 @@ $(function () {
             console.log("Status: " + status);
             console.log("error: " + error);
             console.log("json not found: " + request.responseText);
+        },
+        complete: function (data) {
+
+            $('#loading').hide();
         }
     });
 
