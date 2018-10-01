@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>DZI Admin | Gemstones</title>
+    <title>DZI Admin | Coupons</title>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"><!--Loading bootstrap css-->
@@ -63,14 +63,13 @@
              id="sidebar" role="navigation">
             <div class="sidebar-collapse menu-scroll">
                 <ul class="nav" id="side-menu">
-
                     <div class="clearfix"></div>
 
                     <li><a href="../index.html"><i class="fa fa-desktop fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Dashboard</span></a></li>
 
-                    <li class="active"><a href="gemstones.html"><i class="fas fa-gem fa-fw">
+                    <li><a href="gemstones.html"><i class="fas fa-gem fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Gemstones</span></a></li>
 
@@ -82,7 +81,7 @@
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Metals</span></a></li>
 
-                    <li><a href="coupons.html"><i class="fa fa-desktop fa-fw">
+                    <li class="active"><a href="coupons.html"><i class="fa fa-desktop fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Coupons</span></a></li>
 
@@ -94,7 +93,7 @@
             <div class="page-title-breadcrumb" id="title-breadcrumb-option-demo">
                 <div class="page-header pull-left">
                     <div class="page-title">
-                        Gemstones
+                        Metal
                     </div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
@@ -105,7 +104,7 @@
                     <li class="hidden">
                         <a href="#">Data Grid</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
                     </li>
-                    <li class="active">Gemstones</li>
+                    <li class="active">Metal</li>
                 </ol>
                 <div class="clearfix"></div>
             </div><!--END TITLE & BREADCRUMB PAGE-->
@@ -119,63 +118,69 @@
                             </div>
                         </div>
                         <div class="col-lg-12">
-                            <div class="page-content">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="panel">
-                                            <div class="panel-body">
-                                                <div class="box " id="grid-layout-table-1">
 
-                                                    <div class=" box panel-top">
-                                                        <button class="btn btn-green" id="addNewItemBtn" type="button">
-                                                            Add New<i class="fas fa-plus mls"></i></button>
-                                                    </div>
-                                                    <div class="box text-shadow" id="itemList">
-                                                        <table class="demo-tbl">
-                                                            <!--<item>1</item>-->
-                                                            <tr class="tbl-item">
-                                                                <td class="td-block" style="width: 100%">
-                                                                    <p class="date itemCreatedDate"></p>
-                                                                    <textarea class="itemTitle itemEditableFields"
-                                                                              disabled></textarea>
-                                                                    <textarea class="itemDesc itemEditableFields"
-                                                                              disabled ></textarea>
-                                                                    <p class="like itemUpdatedDate"
-                                                                       style="float: left"></p><a
-                                                                        class="itemButtons editItem" hidden="" href="#">Edit</a>
-                                                                    <a class="updateItem itemButtons" hidden="" href="#">Update</a>
-                                                                    <a class="cancelUpdateItem itemButtons" hidden=""
-                                                                       href="#">Cancel</a> <a
-                                                                        class="deleteItem itemButtons" hidden="" href="#">Delete
-                                                                    Gemstone</a>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="panel panel-yellow">
+                                <div class="panel-heading">List of coupons
+                                    <button class="btn btn-link" style="padding:0.3%; font-size: smaller; color: darkgreen; font-weight: bold;" id="addNewRecordBtn" type="button">
+                                        Add New<i class="fas fa-plus mls"></i></button>
+                                </div>
+
+                                <div class="panel-body">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 2%;">Edit</th>
+                                            <th style="width: 25%;">Name</th>
+                                            <th style="width: 15%;">Discount (in %)</th>
+                                            <th style="width: 15%;">Start Date</th>
+                                            <th style="width: 15%;">End Date</th>
+                                            <th style="width: 15%;">Status</th>
+                                            <th style="width: 10%;"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="tableBody">
+                                        <tr>
+                                            <td><i class="fas fa-edit editIcon"></i></td>
+                                            <td><input type="text" value="New Year" class="couponText" disabled/></td>
+                                            <td><input type="number" value="20" min="1" max="20" class="couponText" disabled/></td>
+                                            <td><input type="date" class="inputDate startDate" disabled/></td>
+                                            <td><input type="date" class="inputDate endDate" disabled/></td>
+                                            <td><span class="label label-sm label-success">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-edit editIcon"></i></td>
+                                            <td><input type="text" value="New Year" class="couponText" disabled/></td>
+                                            <td><input type="number" value="20"  min="1" max="20" class="couponText" disabled/></td>
+                                            <td><input type="date" class="inputDate startDate" disabled/></td>
+                                            <td><input type="date" class="inputDate endDate" disabled/></td>
+                                            <td><span class="label label-sm label-danger">Inactive</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
-            </div><!--END CONTENT-->
-            <!--BEGIN FOOTER-->
-            <div id="footer">
-                <div class="copyright">
-                    <a href="http://themifycloud.com">2018 © DZI Creations Admin tool</a>
-                </div>
-            </div><!--END FOOTER-->
-        </div><!--END PAGE WRAPPER-->
-    </div>
+            </div>
+        </div><!--END CONTENT-->
+        <!--BEGIN FOOTER-->
+        <div id="footer">
+            <div class="copyright">
+                <a href="http://themifycloud.com">2018 © DZI Creations Admin tool</a>
+            </div>
+        </div><!--END FOOTER-->
+    </div><!--END PAGE WRAPPER-->
+</div>
 </div>
 
 <script src="../script/jquery-1.10.2.min.js">
 </script>
 
-<script src="../script/gemstoneScript.js"></script>
+<script src="../script/couponsScript.js"></script>
+
 <script src="../script/jquery-migrate-1.2.1.min.js">
 </script>
 <script src="../script/jquery-ui.js">

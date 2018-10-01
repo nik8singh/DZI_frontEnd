@@ -1,11 +1,11 @@
-.gemDesc{
-    height: 60px;
+.itemDesc {
+    height: 40px;
     width: 100%;
     color: gray;
 
 }
 
-.gemTitle{
+.itemTitle {
     width: 50%;
     border: none;
     font-size: 16px;
@@ -13,24 +13,60 @@
     height: 2em;
     overflow: hidden;
     resize: none;
-    text-transform:capitalize;
+    text-transform: capitalize;
 }
 
-.gemEditableFields{
+.itemEditableFields {
     background: #FFF;
-    border:none;
+    border: none;
+    -o-user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    user-select: text;
 }
 
-.gemEditingMode{
+.itemEditingMode {
 
     color: #000000;
     border: 1px solid #000;
 }
 
-.gemButtons{
+.itemButtons {
     color: darkred;
     font-weight: bold;
-    margin-left:3em;
+    margin-left: 3em;
+}
+.editIcon:hover{
+    cursor: pointer;
+}
+
+.inputDate{
+    height: 34px;
+    color: black;
+}
+
+.inputDate:disabled{
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+
+.couponText{
+    color: black;
+    -o-user-select: text !important;
+    -moz-user-select: text!important;
+    -webkit-user-select: text!important;
+    user-select: text!important;
+}
+
+.couponText:disabled {
+    background-color: transparent;
+    border: none;
+    color: black;
+    -o-user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    user-select: text;
 }
 
 /* Tooltip container */
