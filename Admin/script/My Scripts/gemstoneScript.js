@@ -1,5 +1,6 @@
 const url = "http://localhost:8080/gemstone/";
 
+let loading = "#loading";
 $(function () {
 
     $.ajax({
@@ -37,7 +38,7 @@ $(function () {
         },
         complete: function (data) {
 
-            $('#loading').hide();
+            $(loading).hide();
         }
     });
 });
@@ -110,6 +111,7 @@ $(tablesDivision).on('click', '.editItem', function () {
 
 $(tablesDivision).on('click', '.updateItem', function () {
     getElements(this);
+    $(loading).show();
 
     $(this).prop('disabled', true);
     $(this).css('color', 'grey');
@@ -123,6 +125,15 @@ $(tablesDivision).on('click', '.updateItem', function () {
         contentType: 'application/json',
         success: function (result, status) {
             lastUpdateDate.text(getCurrentDate);
+            gemName.prop('disabled', true);
+            gemDesc.prop('disabled', true);
+            gemName.removeClass("itemEditingMode");
+            gemDesc.removeClass("itemEditingMode");
+            editBtn.show();
+            $(self).hide();
+            $(self).prop('disabled', false);
+            $(self).css('color', 'darkred');
+            deleteBtn.hide();
             showAlert("alert-success", "<strong>" + name + "</strong> gemstone updated Successfully", self);
         },
         error: function (request, status, error) {
@@ -130,18 +141,15 @@ $(tablesDivision).on('click', '.updateItem', function () {
             console.log("Status: " + status);
             console.log("error: " + error);
             console.log("response: " + request.responseText);
+        },
+        complete: function (data) {
+
+            $(loading).hide();
+
         }
     });
 
-    gemName.prop('disabled', true);
-    gemDesc.prop('disabled', true);
-    gemName.removeClass("itemEditingMode");
-    gemDesc.removeClass("itemEditingMode");
-    editBtn.show();
-    $(this).hide();
-    $(this).prop('disabled', false);
-    $(this).css('color', 'darkred');
-    deleteBtn.hide();
+
 
     return false;
 });
@@ -162,7 +170,7 @@ $(tablesDivision).on('click', '.cancelUpdateItem', function () {
 });
 
 $(tablesDivision).on('click', '.deleteItem', function () {
-
+    $(loading).show();
     let r = confirm("You are about to delete " + itemId + " " + gemName.val() + " Gemstone. Are you Sure?");
     if (r === true) {
         let data = createJsonObject(0);
@@ -181,6 +189,11 @@ $(tablesDivision).on('click', '.deleteItem', function () {
                 console.log("Status: " + status);
                 console.log("error: " + error);
                 console.log("response: " + request.responseText);
+            },
+            complete: function (data) {
+
+                $(loading).hide();
+
             }
         });
     }
@@ -205,6 +218,7 @@ $(tablesDivision).on('click', ".cancelAddNewItem", function () {
 
 $(tablesDivision).on('click', ".addNewItem", function () {
     getElements(this);
+    $(loading).show();
     let data = createJsonObject(1);
     let self = this;
     $.ajax({
@@ -224,6 +238,11 @@ $(tablesDivision).on('click', ".addNewItem", function () {
             console.log("Status: " + status);
             console.log("error: " + error);
             console.log("response: " + request.responseText);
+        },
+        complete: function (data) {
+
+            $(loading).hide();
+
         }
     });
 });

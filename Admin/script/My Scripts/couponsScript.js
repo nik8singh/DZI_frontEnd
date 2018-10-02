@@ -1,5 +1,6 @@
 const url = "http://localhost:8080/coupon/";
 let tableBody = ".tableBody";
+let loading = "#loading";
 let recordId;
 let recordName;
 let recordDiscount;
@@ -10,6 +11,10 @@ let cancelBtn;
 let deleteBtn;
 let applyBtn;
 let isActive;
+let previousName;
+let previousStartDate;
+let previousEndDate;
+let previousDiscount;
 
 
 $(function () {
@@ -32,7 +37,7 @@ $(function () {
         },
         complete: function (data) {
 
-            $('#loading').hide();
+            $(loading).hide();
         }
     });
 });
@@ -118,6 +123,35 @@ function createNewRecord(id, name, discount, start, end) {
     $(".tableBody").prepend(record);
 }
 
+function modeChanger(disable) {
+    recordName.prop('disabled', disable);
+    recordDiscount.prop('disabled', disable);
+    recordStartDate.prop('disabled', disable);
+    recordEndDate.prop('disabled', disable);
+    if (disable) {
+        cancelBtn.hide();
+        deleteBtn.hide();
+        applyBtn.hide();
+
+        recordStatus.removeClass("label-info");
+
+        if (isActive) {
+            recordStatus.text("Active");
+            recordStatus.addClass("label-success");
+        } else {
+            recordStatus.text("Inactive");
+            recordStatus.addClass("label-danger")
+        }
+    } else {
+        recordStatus.removeClass("label-success label-danger");
+        recordStatus.addClass("label-info");
+        recordStatus.text("Pending");
+        cancelBtn.show();
+        deleteBtn.show();
+        applyBtn.show();
+    }
+}
+
 $('#addNewRecordBtn').on('click', function () {
     let r = "<tr>\n" +
         "<td><i class=\"fas fa-edit editIcon\"></i></td>\n" +
@@ -140,43 +174,28 @@ $(tableBody).on('click', ".cancelBtn", function () {
 
 $(tableBody).on('click', ".editIcon", function () {
     getElements(this);
-    recordName.prop('disabled', false);
-    recordDiscount.prop('disabled', false);
-    recordStartDate.prop('disabled', false);
-    recordEndDate.prop('disabled', false);
-    recordStatus.removeClass("label-success label-danger");
-    recordStatus.addClass("label-info");
-    recordStatus.text("Pending");
-    cancelBtn.show();
-    deleteBtn.show();
-    applyBtn.show();
+    previousName = recordName.val();
+    previousEndDate = recordEndDate.val();
+    previousStartDate = recordStartDate.val();
+    previousDiscount = recordDiscount.val();
+    modeChanger(false);
     return false;
 });
 
 $(tableBody).on('click', ".cancelEditBtn", function () {
     getElements(this);
-    recordName.prop('disabled', true);
-    recordDiscount.prop('disabled', true);
-    recordStartDate.prop('disabled', true);
-    recordEndDate.prop('disabled', true);
-    cancelBtn.hide();
-    deleteBtn.hide();
-    applyBtn.hide();
-    recordStatus.removeClass("label-info");
-    if (isActive) {
-        recordStatus.text("Active");
-        recordStatus.addClass("label-success");
-    } else {
-        recordStatus.text("Inactive");
-        recordStatus.addClass("label-danger")
-    }
+    recordName.val(previousName);
+    recordDiscount.val(previousDiscount);
+    recordStartDate.val(previousStartDate);
+    recordEndDate.val(previousEndDate);
+    modeChanger(true);
 
     return false;
 });
 
 $(tableBody).on('click', ".addBtn", function () {
 
-    $('#loading').show();
+    $(loading).show();
     getElements(this);
     let data = createJsonObject(1);
     let self = this;
@@ -201,7 +220,7 @@ $(tableBody).on('click', ".addBtn", function () {
         },
         complete: function (data) {
 
-            $('#loading').hide();
+            $(loading).hide();
         }
 
 
@@ -213,7 +232,7 @@ $(tableBody).on('click', ".deleteBtn", function () {
     let r = confirm("You are about to delete " + recordName.val() + " Coupon. Are you Sure?");
     if (r === true) {
 
-        $('#loading').show();
+        $(loading).show();
         getElements(this);
         let data = createJsonObject(0);
         let self = this;
@@ -237,7 +256,7 @@ $(tableBody).on('click', ".deleteBtn", function () {
             },
             complete: function (data) {
 
-                $('#loading').hide();
+                $(loading).hide();
             }
 
 
@@ -246,6 +265,42 @@ $(tableBody).on('click', ".deleteBtn", function () {
 
 });
 
+$(tableBody).on('click', ".applyEditBtn", function () {
+
+    $(loading).show();
+    getElements(this);
+    let data = createJsonObject(0);
+
+    $.ajax({
+        url: url + "update",
+        type: 'POST',
+        data: data,
+        contentType: 'application/json',
+        success: function (result) {
+
+            modeChanger(true);
+
+            showAlert("alert-success", "<strong>" + recordName.val() + "</strong> Coupon Updated", ".page-header");
+
+        },
+        error: function (request, status, error) {
+
+            showAlert("alert-danger", "Error Coupon NOT Added", ".page-header");
+            console.log("Status: " + status);
+            console.log("error: " + error);
+            console.log("json not found: " + request.responseText);
+
+            showAlert("alert-danger", "ERROR: <strong>" + recordName.val() + "</strong> Coupon NOT updated", ".page-header");
+        },
+        complete: function (data) {
+
+            $(loading).hide();
+        }
+
+
+    });
+
+});
 
 function formatDate(inputDate) {
 
