@@ -11,7 +11,6 @@
     <link href="../styles/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css">
     <link href="../styles/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../styles/animate.css" rel="stylesheet" type="text/css">
-    <link href="../styles/all.css" rel="stylesheet" type="text/css">
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
     <link href="../styles/style-responsive.css" rel="stylesheet" type="text/css">
     <link href="../styles/zabuto_calendar.min.css" rel="stylesheet" type="text/css">
@@ -19,12 +18,11 @@
     <link href="../styles/jquery.news-ticker.css" rel="stylesheet" type="text/css">
     <link href="../styles/jplist-custom.css" rel="stylesheet" type="text/css">
     <link href="../styles/customStyle.css" rel="stylesheet" type="text/css">
-    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-<!--<div id="loading">-->
-    <!--<img id="loading-image" src="../images/gif/gif-loading.gif" alt="Loading..." />-->
-<!--</div>-->
+<div id="loading">
+    <img id="loading-image" src="../images/gif/gif-loading.gif" alt="Loading..." />
+</div>
 <div>
     <!--BEGIN BACK TO TOP-->
     <a href="#" id="totop"><i class="fa fa-angle-up"></i></a> <!--END BACK TO TOP-->
@@ -36,12 +34,12 @@
                 <button class="navbar-toggle" data-target=".sidebar-collapse" data-toggle="collapse" type="button"><span
                         class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
                         class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="../index.html" id="logo"><span class="fa fa-rocket"></span><span
+                <a class="navbar-brand" href="../index.html" id="logo"><span
                         class="logo-text">DZI Creations</span><span class="logo-text-icon"
                                                                     style="display: none">µ</span></a>
             </div>
             <div class="topbar-main">
-                <a class="hidden-xs" href="#" id="menu-toggle"><i class="fa fa-bars"></i></a>
+                <a class="hidden-xs menuBar" href="#" id="menu-toggle"><i class="fas fa-bars"></i></a>
                 <ul class="nav navbar navbar-top-links navbar-right mbn">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-hover="dropdown" href="#"><i class="fa fa-bell fa-fw"></i> <span
@@ -107,7 +105,7 @@
                     <li class="hidden">
                         <a href="#">Data Grid</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
                     </li>
-                    <li class="active">Metal</li>
+                    <li class="active">Coupon</li>
                 </ol>
                 <div class="clearfix"></div>
             </div><!--END TITLE & BREADCRUMB PAGE-->
@@ -133,31 +131,16 @@
                                         <thead>
                                         <tr>
                                             <th style="width: 2%;">Edit</th>
-                                            <th style="width: 25%;">Name</th>
-                                            <th style="width: 15%;">Discount (in %)</th>
+                                            <th style="width: 20%;">Name</th>
+                                            <th style="width: 15%;">Discount(In %)</th>
                                             <th style="width: 15%;">Start Date</th>
                                             <th style="width: 15%;">End Date</th>
-                                            <th style="width: 15%;">Status</th>
-                                            <th style="width: 10%;"></th>
+                                            <th style="width: 10%;">Status</th>
+                                            <th style="width: 15%;"></th>
                                         </tr>
                                         </thead>
                                         <tbody class="tableBody">
-                                        <tr>
-                                            <td><i class="fas fa-edit editIcon"></i></td>
-                                            <td><input type="text" value="New Year" class="couponText" disabled/></td>
-                                            <td><input type="number" value="20" min="1" max="20" class="couponText" disabled/></td>
-                                            <td><input type="date" class="inputDate startDate" disabled/></td>
-                                            <td><input type="date" class="inputDate endDate" disabled/></td>
-                                            <td><span class="label label-sm label-success">Active</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fas fa-edit editIcon"></i></td>
-                                            <td><input type="text" value="New Year" class="couponText" disabled/></td>
-                                            <td><input type="number" value="20"  min="1" max="20" class="couponText" disabled/></td>
-                                            <td><input type="date" class="inputDate startDate" disabled/></td>
-                                            <td><input type="date" class="inputDate endDate" disabled/></td>
-                                            <td><span class="label label-sm label-danger">Inactive</span></td>
-                                        </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -177,73 +160,74 @@
         </div><!--END FOOTER-->
     </div><!--END PAGE WRAPPER-->
 </div>
-</div>
 
-<script src="../script/jquery-1.10.2.min.js">
-</script>
-
-<script src="../script/couponsScript.js"></script>
-
-<script src="../script/jquery-migrate-1.2.1.min.js">
-</script>
-<script src="../script/jquery-ui.js">
-</script>
-<script src="../script/bootstrap.min.js">
-</script>
-<script src="../script/bootstrap-hover-dropdown.js">
-</script>
-<script src="../script/html5shiv.js">
-</script>
-<script src="../script/respond.min.js">
-</script>
-<script src="../script/jquery.metisMenu.js">
-</script>
-<script src="../script/jquery.slimscroll.js">
-</script>
-<script src="../script/jquery.cookie.js">
-</script>
-<script src="../script/icheck.min.js">
-</script>
-<script src="../script/custom.min.js">
-</script>
-<script src="../script/jquery.news-ticker.js">
-</script>
-<script src="../script/jquery.menu.js">
-</script>
-<script src="../script/pace.min.js">
-</script>
-<script src="../script/holder.js">
-</script>
-<script src="../script/responsive-tabs.js">
-</script>
-<script src="../script/jquery.flot.js">
-</script>
-<script src="../script/jquery.flot.categories.js">
-</script>
-<script src="../script/jquery.flot.pie.js">
-</script>
-<script src="../script/jquery.flot.tooltip.js">
-</script>
-<script src="../script/jquery.flot.resize.js">
-</script>
-<script src="../script/jquery.flot.fillbetween.js">
-</script>
-<script src="../script/jquery.flot.stack.js">
-</script>
-<script src="../script/jquery.flot.spline.js">
-</script>
-<script src="../script/index.js">
-</script>
-<script src="../script/drilldown.js">
-</script>
-<script src="../script/exporting.js">
-</script>
-<script src="../script/highcharts-more.js">
-</script>
-<script src="../script/modernizr.min.js">
+<script src="../script/TemplateScripts/jquery-1.10.2.min.js">
 </script>
 
-<script src="../script/main.js">
+<script src="../script/My%20Scripts/moment.min.js"></script>
+<script src="../script/My%20Scripts/couponsScript.js"></script>
+<script src="../script/icons/all.js"></script>
+
+<script src="../script/TemplateScripts/jquery-migrate-1.2.1.min.js">
+</script>
+<script src="../script/TemplateScripts/jquery-ui.js">
+</script>
+<script src="../script/TemplateScripts/bootstrap.min.js">
+</script>
+<script src="../script/TemplateScripts/bootstrap-hover-dropdown.js">
+</script>
+<script src="../script/TemplateScripts/html5shiv.js">
+</script>
+<script src="../script/TemplateScripts/respond.min.js">
+</script>
+<script src="../script/TemplateScripts/jquery.metisMenu.js">
+</script>
+<script src="../script/TemplateScripts/jquery.slimscroll.js">
+</script>
+<script src="../script/TemplateScripts/jquery.cookie.js">
+</script>
+<script src="../script/TemplateScripts/icheck.min.js">
+</script>
+<script src="../script/TemplateScripts/custom.min.js">
+</script>
+<script src="../script/TemplateScripts/jquery.news-ticker.js">
+</script>
+<script src="../script/TemplateScripts/jquery.menu.js">
+</script>
+<script src="../script/TemplateScripts/pace.min.js">
+</script>
+<script src="../script/TemplateScripts/holder.js">
+</script>
+<script src="../script/TemplateScripts/responsive-tabs.js">
+</script>
+<script src="../script/TemplateScripts/jquery.flot.js">
+</script>
+<script src="../script/TemplateScripts/jquery.flot.categories.js">
+</script>
+<script src="../script/TemplateScripts/jquery.flot.pie.js">
+</script>
+<script src="../script/TemplateScripts/jquery.flot.tooltip.js">
+</script>
+<script src="../script/TemplateScripts/jquery.flot.resize.js">
+</script>
+<script src="../script/TemplateScripts/jquery.flot.fillbetween.js">
+</script>
+<script src="../script/TemplateScripts/jquery.flot.stack.js">
+</script>
+<script src="../script/TemplateScripts/jquery.flot.spline.js">
+</script>
+<script src="../script/TemplateScripts/index.js">
+</script>
+<script src="../script/TemplateScripts/drilldown.js">
+</script>
+<script src="../script/TemplateScripts/exporting.js">
+</script>
+<script src="../script/TemplateScripts/highcharts-more.js">
+</script>
+<script src="../script/TemplateScripts/modernizr.min.js">
+</script>
+
+<script src="../script/TemplateScripts/main.js">
 </script>
 
 </body>

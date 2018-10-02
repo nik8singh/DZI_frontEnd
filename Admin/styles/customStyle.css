@@ -43,12 +43,32 @@
 .inputDate{
     height: 34px;
     color: black;
+    width: 90%;
 }
 
 .inputDate:disabled{
     background-color: transparent;
     border: none;
     color: black;
+}
+.cancelEditBtn{
+    padding-left: 5px;
+    margin-left: 0!important;
+    float: left;
+}
+.applyEditBtn{
+    margin-left: 0!important;
+    float: left;
+}
+.deleteBtn{
+    padding-left: 15px;
+    margin-left: 0!important;
+    float: right;
+}
+
+.addBtn{
+    margin-left: 0!important;
+    float: left;
 }
 
 .couponText{

@@ -2,8 +2,6 @@ const url = "http://localhost:8080/gemstone/";
 
 $(function () {
 
-    console.log("CALLING AJAX");
-
     $.ajax({
         url: url + "all",
         type: 'GET',
