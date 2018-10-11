@@ -154,3 +154,8 @@
     visibility: visible;
     opacity: 1;
 }
+
+#calendar{
+    color: black;
+    font-size: large;
+}

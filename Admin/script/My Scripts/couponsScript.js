@@ -226,6 +226,24 @@ $(tableBody).on('click', ".addBtn", function () {
 
     });
 
+    // let jsonObj = {
+    //     "showName": "tester",
+    //     "showDescription": "test show",
+    //     "boothNumber": "D101",
+    //     "startDate": "",
+    //     "endDate": "",
+    //     "showAddress":
+    //         {
+    //             "addressFullname": "John Ab",
+    //             "addressStreet": "11/386 sunder vihar",
+    //             "addressUnit": "2nd floor",
+    //             "addressCity": "Delhi",
+    //             "addressZipcode": "110056"
+    //         }
+    //
+    // };
+
+
 });
 
 $(tableBody).on('click', ".deleteBtn", function () {
