@@ -21,98 +21,19 @@
 </head>
 <body>
 <div id="loading">
-    <img id="loading-image" src="../images/gif/gif-loading.gif" alt="Loading..." />
+    <img id="loading-image" src="../images/gif/gif-loading.gif" alt="Loading..."/>
 </div>
 <div>
-    <!--BEGIN BACK TO TOP-->
-    <a href="#" id="totop"><i class="fa fa-angle-up"></i></a> <!--END BACK TO TOP-->
-    <!--BEGIN TOPBAR-->
-    <div class="page-header-topbar" id="header-topbar-option-demo">
-        <nav class="navbar navbar-default navbar-static-top" data-step="3" id="topbar" role="navigation"
-             style="margin-bottom: 0;">
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-target=".sidebar-collapse" data-toggle="collapse" type="button"><span
-                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
-                        class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="../index.html" id="logo"><span
-                        class="logo-text">DZI Creations</span><span class="logo-text-icon"
-                                                                    style="display: none">µ</span></a>
-            </div>
-            <div class="topbar-main">
-                <a class="hidden-xs" href="#" id="menu-toggle"><i class="fa fa-bars"></i></a>
-                <ul class="nav navbar navbar-top-links navbar-right mbn">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-hover="dropdown" href="#"><i class="fa fa-bell fa-fw"></i> <span
-                                class="badge badge-green" id="pendingOrders">3</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-hover="dropdown" href="#"><i class="fas fa-cart-arrow-down"></i>
-                            <span class="badge badge-orange" id="newOrders">10</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-hover="dropdown" href="#"><i class="fa fa-ban fa-fw"></i> <span
-                                class="badge badge-yellow" id="cancelled Orders">8</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div><!--END TOPBAR-->
+    <div id="top_bar"></div>
+
     <div id="wrapper">
-        <!--BEGIN SIDEBAR MENU-->
-        <nav class="navbar-default navbar-static-side"
-             data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;" data-position="right" data-step="2"
-             id="sidebar" role="navigation">
-            <div class="sidebar-collapse menu-scroll">
-                <ul class="nav" id="side-menu">
-                    <div class="clearfix"></div>
 
-                    <li><a href="../index.html"><i class="fa fa-desktop fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i><span class="menu-title">Dashboard</span></a></li>
+        <div id="menu"></div>
 
-                    <li><a href="gemstones.html"><i class="fas fa-gem fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i><span class="menu-title">Gemstones</span></a></li>
-
-                    <li class="active"><a href="jewelry-type.html"><i class="fa fa-desktop fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i><span class="menu-title">Jewelry Types</span></a></li>
-
-                    <li><a href="metal.html"><i class="fa fa-desktop fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i><span class="menu-title">Metals</span></a></li>
-
-                    <li><a href="coupons.html"><i class="fa fa-desktop fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i><span class="menu-title">Coupons</span></a></li>
-
-                    <li><a href="shows.html"><i class="fa fa-desktop fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i><span class="menu-title">Shows</span></a></li>
-
-                </ul>
-            </div>
-        </nav>
         <div id="page-wrapper">
-            <!--BEGIN TITLE & BREADCRUMB PAGE-->
-            <div class="page-title-breadcrumb" id="title-breadcrumb-option-demo">
-                <div class="page-header pull-left">
-                    <div class="page-title">
-                        Jewelry Types
-                    </div>
-                </div>
-                <ol class="breadcrumb page-breadcrumb pull-right">
-                    <li>
-                        <i class="fa fa-home"></i>&nbsp;<a href="../index.html">Home</a>&nbsp;&nbsp;<i
-                            class="fa fa-angle-right"></i>&nbsp;&nbsp;
-                    </li>
-                    <li class="hidden">
-                        <a href="#">Data Grid</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
-                    </li>
-                    <li class="active">Jewelry Types</li>
-                </ol>
-                <div class="clearfix"></div>
-            </div><!--END TITLE & BREADCRUMB PAGE-->
+
+            <div id="breadcrumb"></div>
+
             <!--BEGIN CONTENT-->
             <div class="page-content">
                 <div id="tab-general">
@@ -138,20 +59,21 @@
                                                                     <textarea class="itemTitle itemEditableFields"
                                                                               disabled></textarea>
                                                                     <textarea class="itemDesc itemEditableFields"
-                                                                              disabled ></textarea>
+                                                                              disabled></textarea>
                                                                     <p class="like itemUpdatedDate"
                                                                        style="float: left"></p><a
                                                                         class="itemButtons editItem" hidden="" href="#">Edit</a>
-                                                                    <a class="updateItem itemButtons" hidden="" href="#">Update</a>
+                                                                    <a class="updateItem itemButtons" hidden=""
+                                                                       href="#">Update</a>
                                                                     <a class="cancelUpdateItem itemButtons" hidden=""
                                                                        href="#">Cancel</a> <a
-                                                                        class="deleteItem itemButtons" hidden="" href="#">Delete
+                                                                        class="deleteItem itemButtons" hidden=""
+                                                                        href="#">Delete
                                                                     Gemstone</a>
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                     </div>
-                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -161,15 +83,16 @@
                         </div>
                     </div>
                 </div>
-            </div><!--END CONTENT-->
-            <!--BEGIN FOOTER-->
-            <div id="footer">
-                <div class="copyright">
-                    <a href="http://themifycloud.com">2018 © DZI Creations Admin tool</a>
-                </div>
-            </div><!--END FOOTER-->
-        </div><!--END PAGE WRAPPER-->
-    </div>
+            </div>
+        </div><!--END CONTENT-->
+        <!--BEGIN FOOTER-->
+        <div id="footer">
+            <div class="copyright">
+                <a href="http://themifycloud.com">2018 © DZI Creations Admin tool</a>
+            </div>
+        </div><!--END FOOTER-->
+    </div><!--END PAGE WRAPPER-->
+</div>
 </div>
 
 <script src="../script/TemplateScripts/jquery-1.10.2.min.js">
@@ -177,7 +100,7 @@
 
 <script src="../script/icons/all.js"></script>
 <script src="../script/My%20Scripts/jewelry-type-script.js"></script>
-
+<script src="../script/My%20Scripts/commonScript.js"></script>
 <script src="../script/TemplateScripts/jquery-migrate-1.2.1.min.js">
 </script>
 <script src="../script/TemplateScripts/jquery-ui.js">

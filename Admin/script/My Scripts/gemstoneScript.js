@@ -1,7 +1,8 @@
 const url = "http://localhost:8080/gemstone/";
-
 let loading = "#loading";
-$(function () {
+
+
+$(window).on('load', function() {
 
     $.ajax({
         url: url + "all",
@@ -38,11 +39,13 @@ $(function () {
         },
         complete: function (data) {
 
+            $("#activePageCrumb").text("Gemstones");
+            $('#pageTitle').text("Gemstones");
+            $('#menu_gemstone').addClass("active");
             $(loading).hide();
         }
     });
 });
-
 
 let gemName;
 let gemDesc;

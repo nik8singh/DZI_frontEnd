@@ -16,9 +16,7 @@ let previousStartDate;
 let previousEndDate;
 let previousDiscount;
 
-
-$(function () {
-
+$(window).on('load', function() {
     $.ajax({
         url: url + "all",
         type: 'GET',
@@ -37,6 +35,9 @@ $(function () {
         },
         complete: function (data) {
 
+            $("#activePageCrumb").text("Coupons");
+            $('#pageTitle').text("Coupons");
+            $('#menu_coupon').addClass("active");
             $(loading).hide();
         }
     });

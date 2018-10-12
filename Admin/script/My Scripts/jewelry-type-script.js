@@ -1,6 +1,7 @@
 const url = "http://localhost:8080/jewelryType/";
 let loading = "#loading";
-$(function () {
+
+$(window).on('load', function() {
 
     $.ajax({
         url: url + "all",
@@ -35,12 +36,14 @@ $(function () {
         },
         complete: function (data) {
 
+            $("#activePageCrumb").text("Jewelry Types");
+            $('#pageTitle').text("Jewelry Types");
+            $('#menu_jewelryType').addClass("active");
             $(loading).hide();
         }
     });
-
-
 });
+
 
 let gemName;
 let gemDesc;

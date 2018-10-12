@@ -1,6 +1,7 @@
 const url = "http://localhost:8080/metal/";
 let loading = "#loading";
-$(function () {
+
+$(window).on('load', function() {
 
     $.ajax({
         url: url + "all",
@@ -34,13 +35,15 @@ $(function () {
             console.log("json not found: " + request.responseText);
         },
         complete: function (data) {
+            $("#activePageCrumb").text("Metals");
+            $('#pageTitle').text("Metals");
+            $('#menu_metal').addClass("active");
 
             $(loading).hide();
         }
     });
-
-
 });
+
 
 let gemName;
 let gemDesc;
