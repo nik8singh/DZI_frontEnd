@@ -112,8 +112,8 @@ function createNewRecord(id, name, discount, start, end) {
 
     let record = "<tr id=\"" + id + "\">" +
         "<td><i class=\"fas fa-edit editIcon\"></i></td>" +
-        "<td><input type=\"text\" value=\"" + name + "\" class=\"couponText\" disabled/></td>" +
-        "<td><input type=\"number\" value=\"" + discount + "\"  min=\"1\" max=\"20\" class=\"couponText\" disabled/></td>" +
+        "<td><input type=\"text\" value=\"" + name + "\" class=\"tableText\" disabled/></td>" +
+        "<td><input type=\"number\" value=\"" + discount + "\"  min=\"1\" max=\"20\" class=\"tableText\" disabled/></td>" +
         "<td><input type=\"date\" class=\"inputDate startDate\" value=\"" + formatDate(start) + "\" disabled/></td>" +
         "<td><input type=\"date\" class=\"inputDate endDate\" value=\"" + formatDate(end) + "\" disabled/></td>" +
         status +
@@ -156,8 +156,8 @@ function modeChanger(disable) {
 $('#addNewRecordBtn').on('click', function () {
     let r = "<tr>\n" +
         "<td><i class=\"fas fa-edit editIcon\"></i></td>\n" +
-        "<td><input type=\"text\" class=\"couponText\"/></td>\n" +
-        "<td><input type=\"number\" min=\"1\" max=\"100\" class=\"couponText\"/></td>\n" +
+        "<td><input type=\"text\" class=\"tableText\"/></td>\n" +
+        "<td><input type=\"number\" min=\"1\" max=\"100\" class=\"tableText\"/></td>\n" +
         "<td><input type=\"date\" class=\"inputDate startDate\"/></td>\n" +
         "<td><input type=\"date\" class=\"inputDate endDate\"/></td>\n" +
         "<td><span class=\"label label-sm label-info\">Pending</span></td>\n" +

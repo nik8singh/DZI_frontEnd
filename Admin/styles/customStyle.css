@@ -71,7 +71,7 @@
     float: left;
 }
 
-.couponText{
+.tableText{
     color: black;
     -o-user-select: text !important;
     -moz-user-select: text!important;
@@ -79,7 +79,7 @@
     user-select: text!important;
 }
 
-.couponText:disabled {
+.tableText:disabled {
     background-color: transparent;
     border: none;
     color: black;
@@ -87,6 +87,18 @@
     -moz-user-select: text;
     -webkit-user-select: text;
     user-select: text;
+}
+
+.header .sign:after{
+    content:"+";
+    display:inline-block;
+}
+.addressRow th,.addressRow td {
+    border: 0!important;
+}
+
+.table tbody tr td{
+    border-top-color: gray;
 }
 
 #loading {
