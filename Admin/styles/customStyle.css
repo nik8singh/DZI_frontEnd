@@ -40,6 +40,9 @@
     cursor: pointer;
 }
 
+.fa-edit{
+    font-size: 20px;
+}
 .inputDate{
     height: 34px;
     color: black;
@@ -78,7 +81,9 @@
     -webkit-user-select: text!important;
     user-select: text!important;
 }
-
+.table thead tr th, .addressRow{
+    color: darkred;
+}
 .tableText:disabled {
     background-color: transparent;
     border: none;
@@ -170,4 +175,8 @@
 #calendar{
     color: black;
     font-size: large;
+}
+
+.fc-row{
+    height: 50%!important;
 }
