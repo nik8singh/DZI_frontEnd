@@ -4,3 +4,4 @@ $(function () {
     $('#menu').load('navbar.html');
     $('#breadcrumb').load('breadcrumb.html');
 });
+

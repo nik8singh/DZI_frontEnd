@@ -1,10 +1,10 @@
 $(function () {
 
-    //BEGIN CALENDAR
-    $("#my-calendar").zabuto_calendar({
-        language: "en"
-    });
-    //END CALENDAR
+    // //BEGIN CALENDAR
+    // $("#my-calendar").zabuto_calendar({
+    //     language: "en"
+    // });
+    // //END CALENDAR
 
     //BEGIN TO-DO-LIST
     $('.todo-list').slimScroll({

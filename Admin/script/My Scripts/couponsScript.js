@@ -45,7 +45,7 @@ $(window).on('load', function() {
 
 function showAlert(alertType, message, elementClass) {
 
-    let done = "<div class=\"alert alert " + alertType + " alert-dismissable\">" + "<button type=\"button\" data-dismiss=\"alert\" aria-hidden=\"true\" class=\"close\">&times;</button>" + message + "</div>";
+    let done = "<div class=\"alert " + alertType + " alert-dismissable\">" + "<button type=\"button\" data-dismiss=\"alert\" aria-hidden=\"true\" class=\"close\">&times;</button>" + message + "</div>";
     $(elementClass).parent().append(done);
 }
 
